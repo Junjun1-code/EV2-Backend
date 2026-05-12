@@ -19,20 +19,20 @@ CREATE TABLE items(
   price int NOT NULL,
   stock int NOT NULL CHECK (stock >= 0),
   img varchar NOT NULL,
-  seller varchar FOREIGN KEY FROM users(username) NOT NULL
+  seller varchar FOREIGN KEY REFERENCES users(username) NOT NULL
 );
 
 CREATE TABLE recentSells(
   id serial PRIMARY KEY,
-  itemName varchar FOREIGN KEY FROM items(itemName) NOT NULL,
+  itemName varchar FOREIGN KEY REFERENCES items(itemName) NOT NULL,
   totalValue int NOT NULL,
   itemAmmount int NOT NULL,
   img varchar NOT NULL
-  seller varchar FOREIGN KEY FROM items(username) NOT NULL
+  seller varchar FOREIGN KEY REFERENCES items(username) NOT NULL
 );
 
 CREATE TABLE ratings(
   id serial PRIMARY KEY,
-  itemId varchar FOREIGN KEY FROM items(id) NOT NULL,
+  itemId varchar FOREIGN KEY REFERENCES items(id) NOT NULL,
   stars number NOT NULL CHECK (number >= 0 AND number <=5)
 )

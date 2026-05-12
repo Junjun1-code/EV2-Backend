@@ -1,5 +1,5 @@
-export { default as userRouter } from './users.router.js'
+export { default as usersRouter } from './users.router.js'
 export { default as itemsRouter } from './items.router.js'
 export { default as ratingsRouter } from './ratings.router.js'
-export { default as recentSells } from './recentSells.model.js'
+export { default as recentSellsRouter } from './recentSells.router.js'
 export { default as errors } from './errors.router.js'
