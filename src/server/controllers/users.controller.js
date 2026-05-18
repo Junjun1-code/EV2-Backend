@@ -9,7 +9,7 @@ export const register = (req, res) => sql.register(req.body)
         }
         res.status(201).json({ status: true, code: 201, message: 'Se ha creado un nuevo usuario'})
     })
-    .catch((error) => res.status(500).json ({ status: false, code: 500, message: 'No se ha podido crear el usuario'}))
+    .catch((error) => res.status(500).json ({ status: false, code: 500, message: error}))
 
 export const login = (req, res) => sql.login(req.body)
     .then((result) => {

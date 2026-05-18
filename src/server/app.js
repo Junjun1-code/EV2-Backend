@@ -1,7 +1,7 @@
 import express from 'express'
 
 import { serverLog } from './middlewares/serverLog.middleware.js'
-import { itemsRouter, ratingsRouter, recentSellsRouter, usersRouter, errors } from './routers/index.js'
+import { itemsRouter, ratingsRouter, usersRouter, errors } from './routers/index.js'
 
 const app = express()
 const PORT = process.env.PORT ?? 3_000
@@ -12,7 +12,6 @@ app.use(serverLog)
 
 app.use(usersRouter)
 app.use(itemsRouter)
-app.use(recentSellsRouter)
 app.use(ratingsRouter)
 app.use(errors)
 
