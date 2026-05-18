@@ -1,7 +1,6 @@
-import * as sql from '../models/medicamentos.model.js'
+import * as sql from '../models/items.model.js'
 
 
-// a este codigo le falta lo de clase anterior, findAll recibe una query
 export const findAll = (req, res) => sql.findAll()
   .then((result) => res.status(200).json({ status: true, code: 200, message: result }))
   .catch((error) => res.status(500).json({ status: false, code: 500, message: error }))

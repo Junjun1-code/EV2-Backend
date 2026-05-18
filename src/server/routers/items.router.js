@@ -7,7 +7,7 @@ const router = Router()
 router.get('/items', itemsController.findAll)
 router.get('/items/:itemName', itemsController.findByName)
 router.post('/items', authToken, itemsController.create)
-router.put('/items/:id', authToken, itemsController.updateById)
-router.delete('/items/:id', authToken,itemsController.deleteById)
+router.put('/items/:id', authToken, itemsController.update)
+router.delete('/items/:id', authToken,itemsController.remove)
 
 export default router

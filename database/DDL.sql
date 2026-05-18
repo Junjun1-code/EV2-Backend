@@ -1,14 +1,16 @@
 -- DROP DATABASE libreShopping;
--- DROP TABLE medicamentos;
--- DROP TABLE personal;
+-- DROP TABLE users;
+-- DROP TABLE items;
+-- DROP TABLE recentSells;
+-- DROP TABLE ratings;
 
 CREATE DATABASE libreShopping;
 
 \c libreShopping;
 CREATE TABLE users(
-  id serial,
+  id serial PRIMARY KEY,
   username varchar NOT NULL,
-  email varchar PRIMARY KEY NOT NULL,
+  email varchar NOT NULL,
   password varchar NOT NULL,
   userType varchar NOT NULL
 );
@@ -19,20 +21,13 @@ CREATE TABLE items(
   price int NOT NULL,
   stock int NOT NULL CHECK (stock >= 0),
   img varchar NOT NULL,
-  seller varchar FOREIGN KEY REFERENCES users(username) NOT NULL
+  seller int NOT NULL REFERENCES users(id)
 );
 
-CREATE TABLE recentSells(
-  id serial PRIMARY KEY,
-  itemName varchar FOREIGN KEY REFERENCES items(itemName) NOT NULL,
-  totalValue int NOT NULL,
-  itemAmmount int NOT NULL,
-  img varchar NOT NULL
-  seller varchar FOREIGN KEY REFERENCES items(username) NOT NULL
-);
 
 CREATE TABLE ratings(
   id serial PRIMARY KEY,
-  itemId varchar FOREIGN KEY REFERENCES items(id) NOT NULL,
-  stars number NOT NULL CHECK (number >= 0 AND number <=5)
-)
+  itemId int NOT NULL REFERENCES items(id),
+  stars int NOT NULL CHECK (stars >= 0 AND stars <=5),
+  userId int NOT NULL REFERENCES users(id)
+);

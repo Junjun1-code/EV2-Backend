@@ -4,10 +4,10 @@ import { authToken } from '../middlewares/items.middleware.js'
 
 const router = Router()
 
-router.get('/ratings', ratingsController.findAll)
-router.get('/ratings/:itemId', ratingsController.findByName)
-router.post('/ratings/:itemId', authToken, ratingsController.create)
-router.put('/ratings/:id', authToken, ratingsController.updateById)
-router.delete('/ratings/:id', authToken, ratingsController.deleteById)
+router.get('/ratings', ratingsController.orderByRatings)
+router.get('/ratings/:itemId', ratingsController.findRatingsFromItem)
+router.post('/ratings/:itemId', authToken, ratingsController.addRating)
+router.put('/ratings/:id', authToken, ratingsController.update)
+router.delete('/ratings/:id', authToken, ratingsController.remove)
 
 export default router
