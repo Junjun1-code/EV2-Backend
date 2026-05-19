@@ -27,7 +27,7 @@ CREATE TABLE items(
 
 CREATE TABLE ratings(
   id serial PRIMARY KEY,
-  itemId int NOT NULL REFERENCES items(id),
+  itemId int NOT NULL REFERENCES items(id) ON DELETE CASCADE,
   stars int NOT NULL CHECK (stars >= 0 AND stars <=5),
-  userId int NOT NULL REFERENCES users(id)
+  userId int NOT NULL REFERENCES users(id) ON DELETE CASCADE
 );

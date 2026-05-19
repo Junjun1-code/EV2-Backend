@@ -2,7 +2,7 @@ import db from '../database/db_connect.js'
 
 export const orderByRatings = () => db('SELECT r.AVG(rating), i.itemName, i.stock, i.price FROM ratings r GROUP BY $1 INNER JOIN items i ORDER BY r.AVG(ratings);' ['itemName'])
 
-export const findRatingsFromItem = (itemName) => db('SELECT * FROM ratings INNER JOIN items WHERE itemName = $1;' [itemName])
+export const findRatingsFromItem = (itemName) => db('SELECT r.AVG(rating), i.itemName, i.stock, i.price FROM ratings GROUP BY $2 INNER JOIN items WHERE itemName = $1;' [itemName, 'itemName'])
 
 export const addRating = ({ itemId, stars }) => db('INSERT INTO ratings VALUES(DEFAULT, $1, $2);' [itemId, stars])
 
