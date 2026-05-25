@@ -1,7 +1,7 @@
 Como utilizar:
 1) Dentro de un editor de codigo (por ejemplo, visual studio code) ingresar a una terminal valida.
 2) Verificar que dentro de la terminal se encuentre en la carpeta correcta, en caso contrario, acceder a la carpeta correcta con el comando CD
-3) Ejecutar en la terminal el comando "npm install dotenv express jsonwebtoken pg"
+3) Ejecutar en la terminal el comando "npm install dotenv express jsonwebtoken pg bcrypt"
 4) En la altura EV2-Backend se encontrara un archivo ".env copy", modificarle su nombre a ".env" y modificar los datos para acceder a la base de datos.
    - Se recomienda utilizar "PORT=3000, DB_HOST=localhost, DB_PORT=5432, DB_DATABASE=libreShopping"
 5) Crear una base de datos en una aplicacion especializada, por ejemplo pgadmin4.
