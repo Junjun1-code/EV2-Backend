@@ -26,8 +26,6 @@ export const readUserList = (req, res) => sql.readUsers()
     .then((result) => {
         const authHeader = req.headers.authorization
         const token = authHeader.split(" ")[1]
-        // console.log(token)
-        // console.log (jwtDecode(token).usertype)
         if( jwtVerify(token) && jwtDecode(token).usertype === 'Administrator') res.status(200).json({message: {result}})
         else res.status(403).json({ status: false, code: 403, message: "Acceso denegado." })
     })
