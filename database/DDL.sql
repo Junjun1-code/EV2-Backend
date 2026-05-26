@@ -21,7 +21,7 @@ CREATE TABLE items(
   price int NOT NULL,
   stock int NOT NULL CHECK (stock >= 0),
   img varchar NOT NULL,
-  seller int NOT NULL REFERENCES users(id)
+  user int NOT NULL REFERENCES users(id)
 );
 
 
