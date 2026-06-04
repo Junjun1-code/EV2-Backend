@@ -18,6 +18,3 @@ INSERT INTO ratings(id, itemId, stars, userId) VALUES
 SELECT * FROM users;
 SELECT * FROM items;
 select * from ratings;
-
-INSERT INTO items(id,itemName,price,stock,img,seller) VALUES
-(DEFAULT, 'PC', 340000, 145, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQutrm9ocwLwparIefjD_uFMGR-GqYlx0pzvQ&s', 2)
