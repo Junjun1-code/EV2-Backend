@@ -1,8 +1,7 @@
 -- DROP DATABASE libreShopping;
--- DROP TABLE users;
--- DROP TABLE items;
--- DROP TABLE recentSells;
 -- DROP TABLE ratings;
+-- DROP TABLE items;
+-- DROP TABLE users;
 
 CREATE DATABASE libreShopping;
 
@@ -21,7 +20,7 @@ CREATE TABLE items(
   price int NOT NULL,
   stock int NOT NULL CHECK (stock >= 0),
   img varchar NOT NULL,
-  user int NOT NULL REFERENCES users(id)
+  seller int NOT NULL REFERENCES users(id)
 );
 
 
