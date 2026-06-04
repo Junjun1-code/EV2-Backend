@@ -1,6 +1,6 @@
 INSERT INTO users(id,username,email,password,usertype) VALUES
 (DEFAULT, 'Admin', 'Admin@LShopping.com', '$2b$10$mLcRSs3KtrdBX1eVLT21oOma1JI4Jr7rUYcfZJs/TOXw9XH3vtpv6' /* 1984 */, 'Administrator'),
-(DEFAULT, 'Jorge', 'JorgeCastillo@gmail.com', '$2b$10$tLJlicKa8Eifk0ujUpBCfeCJjAU.wOhG5mgpV68lLNdWZlEEz.wCG' /*'JorgeCrak12' */, 'User')--,
+(DEFAULT, 'Jorge', 'JorgeCastillo@gmail.com', '$2b$10$tLJlicKa8Eifk0ujUpBCfeCJjAU.wOhG5mgpV68lLNdWZlEEz.wCG' /*'JorgeCrak12' */, 'User'),
 (DEFAULT, 'Rodrigo', 'Rodri123@hotmail.com', '$2b$10$3SabcH2BtjtX3I/z5EWXr.sPxP8cJvPrDvqdCDXFB/weji345NxX6' /* 'RojoDorado' */, 'Premium'),
 (DEFAULT, 'Ana', 'AnitaRosada@hotmail.com', '$2b$10$tqEPqZXOdNGhgg5TmqDgh.YCxKUhMbXUxygv.O9X2115qAUTxSeqq' /* 'RositaRoja' */, 'User');
 
