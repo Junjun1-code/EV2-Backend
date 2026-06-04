@@ -1,8 +1,7 @@
 -- DROP DATABASE libreShopping;
--- DROP TABLE users;
--- DROP TABLE items;
--- DROP TABLE recentSells;
 -- DROP TABLE ratings;
+-- DROP TABLE items;
+-- DROP TABLE users;
 
 CREATE DATABASE libreShopping;
 

@@ -11,13 +11,22 @@ export const register = (req, res) => sql.register(req.body)
     })
     .catch((error) => res.status(500).json ({ status: false, code: 500, message: error}))
 
+// export const registerAdmin = (req, res) => sql.registerAdmin(req.body)
+//     .then((result) => {
+//         if (result.code){
+//             res.status(500).json({ status: false, code:500, message: result })
+//             return
+//         }
+//         res.status(201).json({ status: true, code: 201, message: 'Se ha creado un nuevo administrador'})
+//     })
+//     .catch((error) => res.status(500).json ({ status: false, code: 500, message: error}))
+
 export const login = (req, res) => sql.login(req.body)
     .then((result) => {
         if (result.length ===0){
-            res.status(200).json({message: 'Email y/o contraseña no coinciden'})
+                res.status(200).json({message: 'Email y/o contraseña no coinciden'})
         }
-        const token = jwtSign(result[0])
-
+        const token = jwtSign(result)
         res.status(200).json({message: {token} })
     })
     .catch((error) => res.status(500).json({ code:500, message: error}))

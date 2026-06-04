@@ -1,8 +1,8 @@
 INSERT INTO users(id,username,email,password,usertype) VALUES
-(DEFAULT, 'Admin', 'Admin@LShopping.com', '1984', 'Administrator'),
-(DEFAULT, 'Jorge', 'JorgeCastillo@gmail.com', 'JorgeCrak12', 'User'),
-(DEFAULT, 'Rodrigo', 'Rodri123@hotmail.com', 'RojoDorado', 'Premium'),
-(DEFAULT, 'Ana', 'AnitaRosada@hotmail.com', 'RositaRoja', 'User');
+(DEFAULT, 'Admin', 'Admin@LShopping.com', '$2b$10$mLcRSs3KtrdBX1eVLT21oOma1JI4Jr7rUYcfZJs/TOXw9XH3vtpv6' /* 1984 */, 'Administrator'),
+(DEFAULT, 'Jorge', 'JorgeCastillo@gmail.com', '$2b$10$tLJlicKa8Eifk0ujUpBCfeCJjAU.wOhG5mgpV68lLNdWZlEEz.wCG' /*'JorgeCrak12' */, 'User')--,
+(DEFAULT, 'Rodrigo', 'Rodri123@hotmail.com', '$2b$10$3SabcH2BtjtX3I/z5EWXr.sPxP8cJvPrDvqdCDXFB/weji345NxX6' /* 'RojoDorado' */, 'Premium'),
+(DEFAULT, 'Ana', 'AnitaRosada@hotmail.com', '$2b$10$tqEPqZXOdNGhgg5TmqDgh.YCxKUhMbXUxygv.O9X2115qAUTxSeqq' /* 'RositaRoja' */, 'User');
 
 INSERT INTO items(id,itemName,price,stock,img,seller) VALUES
 (DEFAULT, 'PC', 340000, 145, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQutrm9ocwLwparIefjD_uFMGR-GqYlx0pzvQ&s', 2),
@@ -18,3 +18,6 @@ INSERT INTO ratings(id, itemId, stars, userId) VALUES
 SELECT * FROM users;
 SELECT * FROM items;
 select * from ratings;
+
+INSERT INTO items(id,itemName,price,stock,img,seller) VALUES
+(DEFAULT, 'PC', 340000, 145, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQutrm9ocwLwparIefjD_uFMGR-GqYlx0pzvQ&s', 2)
